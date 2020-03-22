@@ -1,0 +1,24 @@
+https://docs.spring.io/spring-ws/site/reference/html/tutorial.html
+
+
+https://visionjava1.appspot.com/content/web-service-contract-first-using-spring-ws.html
+
+mvn archetype:create -DarchetypeGroupId=org.springframework.ws
+-DarchetypeArtifactId=spring-ws-archetype
+-DarchetypeVersion=2.1.4.RELEASE
+-DgroupId=com.visionjava
+-DartifactId=EmployeeEnrollmentWSContractFirst
+
+build.xml Ant
+
+<project name="Ant-Generate-Classes-With-JAXB2" default="generate" basedir=".">
+	<property name="src.dir" location="src" />
+	<property name="java.dir" location="src/main/java" />
+	<property name="schema.dir" location="${src.dir}/main/webapp/WEB-INF" />
+	<target name="generate">
+		<exec executable="xjc">
+			<arg line=" -d ${java.dir} -p com.visionjava.generatedStubs ${schema.dir}/employee.xsd" />
+		</exec>
+	</target>
+</project>
+

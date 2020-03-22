@@ -47,24 +47,6 @@
 
 		<plugins>
 
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>add-source</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>add-source</goal>
-						</goals>
-						<configuration>
-							<sources>
-								<source>${basedir}/target/generated/src/main/java</source>
-							</sources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 
 
 			<plugin>
@@ -75,10 +57,11 @@
 					<wsdlDirectory>${basedir}/src/main/resources/wsdl</wsdlDirectory>
 					<packageName>pe.ricardomarcelo.ventas.ws</packageName>
 					<keep>true</keep>
-					<sourceDestDir>${basedir}/target/generated/src/main/java</sourceDestDir>
+					<sourceDestDir>${basedir}/src/main/java</sourceDestDir>
 				</configuration>
 				<executions>
 					<execution>
+					<phase>generate-sources</phase>
 						<goals>
 							<goal>wsimport</goal>
 						</goals>

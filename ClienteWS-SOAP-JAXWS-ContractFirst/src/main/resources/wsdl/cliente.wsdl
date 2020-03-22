@@ -35,7 +35,7 @@
     </wsdl:operation>
     
   </wsdl:portType>
-  <wsdl:binding name="ClienteWSPortBinding" type="tns:ClienteWS">
+  <wsdl:binding name="ClienteWSPortBinding" type="tns:ClienteWS" >
   	<soap:binding style="document" 
   		transport="http://schemas.xmlsoap.org/soap/http" />
   	<wsdl:operation name="crear" >
