@@ -1,0 +1,7 @@
+wsimport -keep -s src http://localhost:8080/.../ProductWSService?wsdl
+
+wsimport -keep -p net.codejava.webservices.client http://localhost:9898/md5WebService?wsdl
+
+wsimport -keep -verbose http://localhost:8888/service/order?wsdl
+
+C:\>wsimport -keep -verbose http://localhost:8888/ws/server?wsdl

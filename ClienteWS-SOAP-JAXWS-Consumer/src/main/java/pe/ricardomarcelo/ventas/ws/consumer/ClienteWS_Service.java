@@ -1,5 +1,5 @@
 
-package pe.ricardomarcelo.ventas.ws;
+package pe.ricardomarcelo.ventas.ws.consumer;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "ClienteWS", targetNamespace = "http://ricardomarcelo.pe/ws/ventas/", wsdlLocation = "file:/C:/RMV/WorkspaceEclipse201912/Maven/web-services-soap/ClienteWS-SOAP-JAXWS-ContractFirst/src/main/resources/wsdl/cliente.wsdl")
+@WebServiceClient(name = "ClienteWS", targetNamespace = "http://ricardomarcelo.pe/ws/ventas/", wsdlLocation = "http://localhost:8080/ClientesWS-SOAP-JAX-WS/ClienteWS?wsdl")
 public class ClienteWS_Service
     extends Service
 {
@@ -30,7 +30,7 @@ public class ClienteWS_Service
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("file:/C:/RMV/WorkspaceEclipse201912/Maven/web-services-soap/ClienteWS-SOAP-JAXWS-ContractFirst/src/main/resources/wsdl/cliente.wsdl");
+            url = new URL("http://localhost:8080/ClientesWS-SOAP-JAX-WS/ClienteWS?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
