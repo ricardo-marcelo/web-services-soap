@@ -22,3 +22,12 @@ build.xml Ant
 	</target>
 </project>
 
+https://www.onlinetutorialspoint.com/spring-boot/spring-boot-soap-webservices-example.html
+
+https://www.oracle.com/technetwork/server-storage/ts-6157-159255.pdf
+https://memorynotfound.com/produce-spring-ws-contract-first-soap-service/
+
+https://herrho.com/2018/01/14/contract-first-webservice-with-spring-boot-and-jax-ws-ri/
+https://tutorialflix.com/How-to-create-soap-webservice-using-spring-boot/
+https://www.javainuse.com/spring/springbootsoapwebservice
+https://www.javacodegeeks.com/2014/02/creating-contract-first-web-services-with-spring-ws.html
