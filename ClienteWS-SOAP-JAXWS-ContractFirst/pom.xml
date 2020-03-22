@@ -1,0 +1,92 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>pe.ricardomarcelo.ventas</groupId>
+	<artifactId>ClienteWS-SOAP-SPRING-JAXWS-ContractFirst</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<!-- <dependencies> <dependency> <groupId>org.springframework</groupId> 
+		<artifactId>spring-core</artifactId> <version>5.1.12.RELEASE</version> </dependency> 
+		<dependency> <groupId>org.springframework</groupId> <artifactId>spring-web</artifactId> 
+		<version>5.1.12.RELEASE</version> </dependency> <dependency> <groupId>org.jvnet.jax-ws-commons.spring</groupId> 
+		<artifactId>jaxws-spring</artifactId> <version>1.9</version> </dependency> 
+		<dependency> <groupId>com.sun.xml.ws</groupId> <artifactId>jaxws-rt</artifactId> 
+		<version>2.3.2</version> </dependency> <dependency> <groupId>javax.servlet</groupId> 
+		<artifactId>javax.servlet-api</artifactId> <version>3.1.0</version> </dependency> 
+		</dependencies> <build> <finalName>${project.artifactId}</finalName> <plugins> 
+		<plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>jaxws-maven-plugin</artifactId> 
+		<version>1.12</version> <configuration> <wsdlDirectory>${basedir}/src/main/resources/wsdl</wsdlDirectory> 
+		<packageName>pe.ricardomarcelo.ventas.ws</packageName> <keep>true</keep> 
+		<sourceDestDir>${basedir}/target/generated/src/main/java</sourceDestDir> 
+		</configuration> <executions> <execution> <id>wsdl_import</id> <goals> <goal>wsimport</goal> 
+		</goals> </execution> </executions> </plugin> </plugins> </build> -->
+
+
+	<dependencies>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>6.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.ws</groupId>
+			<artifactId>jaxws-rt</artifactId>
+			<version>2.3.2</version>
+		</dependency>
+	</dependencies>
+	<build>
+
+		<plugins>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${basedir}/target/generated/src/main/java</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxws-maven-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<wsdlDirectory>${basedir}/src/main/resources/wsdl</wsdlDirectory>
+					<packageName>pe.ricardomarcelo.ventas.ws</packageName>
+					<keep>true</keep>
+					<sourceDestDir>${basedir}/target/generated/src/main/java</sourceDestDir>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>wsimport</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+	</build>
+
+</project>

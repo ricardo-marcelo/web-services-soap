@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://ricardomarcelo.pe/ws/ventas/" 
+xmlns:tns="http://ricardomarcelo.pe/ws/ventas/"
+elementFormDefault="qualified">
+
+    <complexType name="cliente">
+    	<sequence>
+    		<element name="id" type="int" minOccurs="0"></element>
+    		<element name="nombre" type="string" minOccurs="0"></element>
+    		<element name="direccion" type="string" minOccurs="0"></element>
+    		<element name="telefono" type="string" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="crear">
+
+
+    	<sequence>
+    		<element name="cliente" type="tns:cliente"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="crearResponse">
+    	<sequence>
+    		<element name="resultado" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="consultarTodo">
+    	<sequence></sequence>
+    </complexType>
+
+    <complexType name="consultarTodoResponse">
+    	<sequence>
+    		<element name="cliente" type="tns:cliente" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+
+    <element name="crear" type="tns:crear"></element>
+
+    <element name="crearResponse" type="tns:crearResponse"></element>
+
+    <element name="consultarTodo" type="tns:consultarTodo"></element>
+
+    <element name="consultarTodoResponse" type="tns:consultarTodoResponse"></element>
+</schema>
