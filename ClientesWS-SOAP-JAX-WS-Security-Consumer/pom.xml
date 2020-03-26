@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>pe.ricardomarcelo.ventas</groupId>
+  <artifactId>ClientesWS-SOAP-JAX-WS-Security-Consumer</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  
+  <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                    </execution>
+                </executions>
+                <configuration>            
+                    <keep>true</keep> 
+                    <args>-Xauthfile src/main/resources/auth.conf</args>
+                    <packageName>pe.ricardomarcelo.ventas.ws.typesee</packageName> 
+                    <sourceDestDir>src/main/java</sourceDestDir>                     
+                    <wsdlUrls>
+                        <wsdlUrl>
+                            http://localhost:8080/ClientesWS-SOAP-JAX-WS-Security/ClienteWS?wsdl
+                        </wsdlUrl>
+                    </wsdlUrls>
+                </configuration>
+            </plugin>
+        </plugins>
+       
+</build>
+</project>
